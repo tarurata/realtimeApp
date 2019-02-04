@@ -35,7 +35,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Category::create($request->all());
+        $category = new Category;
+        $category->name = $request->name;
+        $category->slug = str_slug($request->name);
+        $category->save();
+        return response('created', \Symfony\Component\HttpFoundation\Response::HTTP_CREATED);
     }
 
     /**
