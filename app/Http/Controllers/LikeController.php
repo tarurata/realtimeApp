@@ -11,6 +11,7 @@ class LikeController extends Controller
     public function likeIt(Reply $reply)
     {
         $reply->like()->create([
+            //'user_id' => auth() => id()
             'user_id' => '1'
         ]);
     }
