@@ -77706,7 +77706,6 @@ var routes = [{
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: routes,
-  hashbang: false,
   mode: 'history'
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
