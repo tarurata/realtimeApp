@@ -1,6 +1,6 @@
 <template>
-  <v-form v-model="valid">
-
+  <v-container>
+    <v-form @submit.prevent="login">
           <v-text-field
             label="E-mail"
             v-model="form.email"
@@ -20,18 +20,26 @@
             type="submit"
           >Login</v-btn>
 
-  </v-form>
+    </v-form>
+  </v-container>
 </template>
 
 <script>
 export default {
     
-    date(){
+    data(){
         return {
             form :{
                 email:null,
                 password:null
             }
+        }
+    },
+    methods:{
+        login(){
+            axios.post('/api/auth/login',this.form)
+            .then(res => console.log(res.data))
+            .catch(error => console.log(error.response.data))
         }
     }
 }
