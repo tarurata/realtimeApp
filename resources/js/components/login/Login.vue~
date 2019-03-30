@@ -24,15 +24,7 @@
 
 <script>
 export default {
-    
-    date(){
-        return {
-            form :{
-                email:null,
-                password:null
-            }
-        }
-    }
+
 }
 </script>
 
