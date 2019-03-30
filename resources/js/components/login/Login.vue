@@ -1,5 +1,20 @@
 <template>
-    <h1>Login</h1>
+  <v-form v-model="valid">
+
+          <v-text-field
+            label="E-mail"
+            v-model="form.email"
+            required
+          ></v-text-field>
+
+          <v-text-field
+            label="Password"
+            v-model="form.password"
+            type="password"
+            required
+          ></v-text-field>
+
+  </v-form>
 </template>
 
 <script>
