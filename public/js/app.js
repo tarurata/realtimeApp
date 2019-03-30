@@ -14422,7 +14422,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuetify___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuetify__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__router_router_js__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Router_router_js__ = __webpack_require__(72);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -14434,7 +14434,6 @@ __webpack_require__(18);
 window.Vue = __webpack_require__(2);
 
 
-
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuetify___default.a);
 
 /**
@@ -14443,12 +14442,12 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuet
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('AppHome', __webpack_require__(45).default);
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('AppHome', __webpack_require__(45));
 
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
   el: '#app',
-  router: __WEBPACK_IMPORTED_MODULE_2__router_router_js__["a" /* default */]
+  router: __WEBPACK_IMPORTED_MODULE_2__Router_router_js__["a" /* default */]
 });
 
 /***/ }),
@@ -75661,7 +75660,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -75672,6 +75671,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -75729,7 +75729,7 @@ var render = function() {
     },
     [
       _c("v-text-field", {
-        attrs: { label: "E-mail", required: "" },
+        attrs: { label: "E-mail", type: "email", required: "" },
         model: {
           value: _vm.form.email,
           callback: function($$v) {
@@ -75798,31 +75798,7 @@ if (false) {
 }
 
 /***/ }),
-/* 65 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(66);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_login_Login__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_login_Login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_login_Login__);
-
-
-
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
-
-
-
-var routes = [{ path: '/login', component: __WEBPACK_IMPORTED_MODULE_2__components_login_Login___default.a }];
-
-var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
-    routes: routes,
-    mode: 'history'
-});
-/* harmony default export */ __webpack_exports__["a"] = (router);
-
-/***/ }),
+/* 65 */,
 /* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -78452,6 +78428,35 @@ if (inBrowser && window.Vue) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_login_Login__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_login_Login___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_login_Login__);
+
+
+
+__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
+
+
+
+var routes = [{ path: '/login', component: __WEBPACK_IMPORTED_MODULE_2__components_login_Login___default.a }];
+
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+    routes: routes,
+    mode: 'history'
+});
+/* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ })
 /******/ ]);

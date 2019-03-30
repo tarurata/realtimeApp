@@ -4,6 +4,7 @@
           <v-text-field
             label="E-mail"
             v-model="form.email"
+            type="email"
             required
           ></v-text-field>
 
