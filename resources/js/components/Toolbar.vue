@@ -1,7 +1,7 @@
 <template>
     <v-toolbar>
     <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
-    <v-toolbar-title>Taru</v-toolbar-title>
+    <v-toolbar-title>Taru!</v-toolbar-title>
     <v-spacer></v-spacer>
     <div class="hidden-sm-and-down">
 
