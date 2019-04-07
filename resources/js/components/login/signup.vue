@@ -66,9 +66,11 @@ export default {
     },
     methods:{
         signup(){
+            console.log("before axios.post")
             axios.post('/api/auth/signup',this.form)
             .then(res => {
                 User.responseAfterLogin(res)
+                console.log(name)
                 this.$router.push({name:'forum'}) 
                 })
             .catch(error => this.errors = error.response.data.errors)

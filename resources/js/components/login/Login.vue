@@ -41,13 +41,13 @@ export default {
     },
     created(){
         if(User.loggedIn()){
-            console.log('abc')
             this.$router.push({name:'forum'})
         }
     },
     methods:{
         login(){
             User.login(this.form)
+            console.log('abc')
         }
     }
 }
