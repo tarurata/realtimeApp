@@ -14,6 +14,7 @@ const routes = [
     { path: '/login', component: Login },
     { path: '/logout', component: Logout },
     { path: '/signup', component: Signup },
+    { path: '/forum', component: Forum, name:'forum' },
     { path: '/ask', component: Create},
     { path: '/question/:slug', component: Read, name:'read' },
 ]
