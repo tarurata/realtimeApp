@@ -17,7 +17,7 @@
                       <v-icon color="teal">save</v-icon>
                   </v-btn>
 
-                  <v-btn icon samll>
+                  <v-btn icon samll @click="cancel">
                       <v-icon>cancel</v-icon>
                   </v-btn>
               </v-card-actions>
@@ -29,6 +29,7 @@
 <script>
     
 export default{
+    props:['data'],
     data(){
         return{
             form:{
@@ -36,6 +37,14 @@ export default{
                 body: null
             }
         }
+    },
+    methods(){
+        cancel(){
+            EventBus.$emit('cancelEditing')
+        }
+    },
+    created(){
+        this.form = this.data
     }
 }
 
