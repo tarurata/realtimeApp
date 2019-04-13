@@ -97882,7 +97882,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -97934,6 +97934,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             EventBus.$on('startEditing', function () {
                 _this.editing = true;
+            });
+
+            EventBus.$on('cancelEditing', function () {
+                _this.editing = false;
             });
         },
         getQuestion: function getQuestion() {
@@ -98280,16 +98284,74 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 118 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected ; (42:16)\n\n\u001b[0m \u001b[90m 40 | \u001b[39m    }\u001b[33m,\u001b[39m\n \u001b[90m 41 | \u001b[39m    methods(){\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 42 | \u001b[39m        cancel(){\n \u001b[90m    | \u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 43 | \u001b[39m            \u001b[33mEventBus\u001b[39m\u001b[33m.\u001b[39m$emit(\u001b[32m'cancelEditing'\u001b[39m)\n \u001b[90m 44 | \u001b[39m        }\n \u001b[90m 45 | \u001b[39m    }\u001b[33m,\u001b[39m\u001b[0m\n");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['data'],
+    data: function data() {
+        return {
+            form: {
+                title: null,
+                body: null
+            }
+        };
+    },
+
+    methods: {
+        cancel: function cancel() {
+            EventBus.$emit('cancelEditing');
+        },
+        update: function update() {
+            var _this = this;
+
+            axios.patch('/api/question/' + this.form.slug, this.form).then(function (res) {
+                return _this.cancel();
+            });
+        }
+    },
+    created: function created() {
+        this.form = this.data;
+    }
+});
 
 /***/ }),
 /* 119 */
@@ -98308,6 +98370,14 @@ var render = function() {
         [
           _c(
             "v-form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.update($event)
+                }
+              }
+            },
             [
               _c("v-text-field", {
                 attrs: { label: "Title", type: "text", required: "" },
@@ -98335,7 +98405,7 @@ var render = function() {
                 [
                   _c(
                     "v-btn",
-                    { attrs: { icon: "", samll: "" } },
+                    { attrs: { icon: "", samlli: "", type: "submit" } },
                     [
                       _c("v-icon", { attrs: { color: "teal" } }, [
                         _vm._v("save")
