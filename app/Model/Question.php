@@ -20,6 +20,7 @@ class Question extends Model
     
     //protected $guarded = [];
     protected $fillable = ['title', 'sluga', 'body', 'user_id', 'category_id'];
+    protected $with = ['replies'];
 
 
     public function user(){
