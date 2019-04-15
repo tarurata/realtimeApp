@@ -37,7 +37,7 @@ class ReplyController extends Controller
         return response(['reply' => new ReplyResource($reply)], Response::HTTP_CREATED);
     }
 
-    /**
+   /**
      * Display the specified resource.
      *
      * @param  \App\Model\Reply  $reply
