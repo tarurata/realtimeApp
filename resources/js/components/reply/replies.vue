@@ -3,6 +3,7 @@
         <reply 
         v-for="reply in replies" 
         :key="reply.id" 
+        v-if="replies"
         :data=reply></reply>
     </v-container>
 
