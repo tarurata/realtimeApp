@@ -18,9 +18,11 @@
         props:['reply'],
         methods:{
             cancel(){
-                EventBus.$emit('cancelEditing')
+                EventBus.$emit('cancelEditing');
             },
             update(){
+                axios.patch(`/api/question/${this.reply.question_slug}/reply/${this.reply.id}`,{body:this.reply.reply})
+                .then(res => this.cancel())
 
             }
         }

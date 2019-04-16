@@ -16,7 +16,7 @@
             <v-card-text v-else v-html="reply"></v-card-text>
 
             <v-divider></v-divider>            
-                <div v-if="editing">
+                <div v-if="!editing">
                     <v-card-actions v-if="own">
                         <v-btn icon small @click="edit">
                             <v-icon color="orange">edit</v-icon>
@@ -55,13 +55,13 @@
         },
         methods:{
             destroy(){
-                EventBus.$emit('deleteReply',this.index)
+                EventBus.$emit('deleteReply',this.index);
             },
             edit(){
                this.editing = true
             },
             listen(){
-                Eventbus.$on('cancelEditing',()=>{
+                EventBus.$on('cancelEditing',()=>{
                     this.editing = false 
                 })
             }

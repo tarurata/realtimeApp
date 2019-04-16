@@ -12,7 +12,7 @@ export default {
     props:['questionSlug'],
     data() {
         return {
-            body:null,
+            body:null
         }
     },
     methods:{
