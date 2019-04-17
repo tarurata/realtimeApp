@@ -94055,7 +94055,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -94095,6 +94095,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     components: { AppNotification: __WEBPACK_IMPORTED_MODULE_0__AppNotification___default.a },
     data: function data() {
         return {
+            loggedIn: User.loggedIn(),
             items: [{ 'title': 'Forum', to: '/forum', show: true }, { 'title': 'Ask Question', to: '/ask', show: User.loggedIn() }, { 'title': 'Category', to: '/category', show: User.admin() }, { 'title': 'Login', to: '/login', show: !User.loggedIn() }, { 'title': 'Logout', to: '/logout', show: User.loggedIn() }]
         };
     },
@@ -94191,7 +94192,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -94202,6 +94203,14 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -94241,6 +94250,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.unread = res.data.unread;
                 _this.unreadCount = res.data.unread.length;
             });
+        },
+        read: function read(notification) {
+            axios.post('/api/markAsReqd', { id: notification.id });
         }
     }
 });
@@ -94273,15 +94285,47 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-list",
-            _vm._l(_vm.read, function(item) {
-              return _c(
-                "v-list-tile",
-                { key: item.id },
-                [_c("v-list-tile-title", [_vm._v(_vm._s(item.data.question))])],
-                1
-              )
-            }),
-            1
+            [
+              _vm._l(_vm.unread, function(item) {
+                return _c(
+                  "v-list-tile",
+                  { key: item.id },
+                  [
+                    _c(
+                      "router-link",
+                      { attrs: { to: item.data.path } },
+                      [
+                        _c(
+                          "v-list-tile-title",
+                          {
+                            on: {
+                              click: function($event) {
+                                return _vm.read(item.data)
+                              }
+                            }
+                          },
+                          [_vm._v(_vm._s(item.question))]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              }),
+              _vm._v(" "),
+              _c("v-divider"),
+              _vm._v(" "),
+              _vm._l(_vm.read, function(item) {
+                return _c(
+                  "v-list-tile",
+                  { key: item.id },
+                  [_c("v-list-tile-title", [_vm._v(_vm._s(item.question))])],
+                  1
+                )
+              })
+            ],
+            2
           )
         ],
         1
@@ -94315,7 +94359,7 @@ var render = function() {
       _vm._v(" "),
       _c("v-spacer"),
       _vm._v(" "),
-      _c("app-notification"),
+      _vm.loggedIn ? _c("app-notification") : _vm._e(),
       _vm._v(" "),
       _c(
         "div",

@@ -45,9 +45,9 @@ class NewReplyNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'replyBy'=>$this->reply->user->name,
-            'question'=>$this->reply->question->title,
-            'path'=>$this->reply->question->path,
+            'replyBy' => $this->reply->user->name,
+            'question' => $this->reply->question->title,
+            'path'=> $this->reply->question->path,
         ];
     }
 }

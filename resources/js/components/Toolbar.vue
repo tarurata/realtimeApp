@@ -3,7 +3,7 @@
     <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
     <v-toolbar-title>Taru</v-toolbar-title>
     <v-spacer></v-spacer>
-    <app-notification></app-notification>
+    <app-notification v-if="loggedIn"></app-notification>
 
     <div class="hidden-sm-and-down">
 
@@ -25,6 +25,7 @@ export default {
     components:{AppNotification},
     data(){
         return {
+            loggedIn: User.loggedIn(),
             items: [
                 {'title' : 'Forum', to:'/forum', show:true},
                 {'title' : 'Ask Question', to:'/ask', show:User.loggedIn()},
