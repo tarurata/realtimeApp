@@ -9,14 +9,13 @@
             required
           ></v-text-field>
 
-          <v-select
+          <v-autocomplete
             :items="categories"
             item-text="name"
             item-value="id"
             v-model="form.category_id"  
             label="Category"
-            autocomplete
-          ></v-select>
+          ></v-autocomplete>
 
           <markdown-editor v-model="form.body"></markdown-editor>
           

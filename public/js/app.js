@@ -94288,8 +94288,10 @@ var render = function() {
             "v-btn",
             { attrs: { slot: "activator", icon: "" }, slot: "activator" },
             [
-              _c("v-icon", { attrs: { color: "red" } }, [_vm._v("add_alert")]),
-              _vm._v(" 5\n        ")
+              _c("v-icon", { attrs: { color: _vm.color } }, [
+                _vm._v("add_alert")
+              ]),
+              _vm._v(" " + _vm._s(_vm.unreadCount) + "\n        ")
             ],
             1
           ),
@@ -94304,7 +94306,7 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { attrs: { to: item.path } },
+                      { attrs: { to: "/" + item.path } },
                       [
                         _c(
                           "v-list-tile-title",
@@ -98188,7 +98190,7 @@ var render = function() {
             [
               _c(
                 "v-list-tile-content",
-                [_c("v-list-title", [_vm._v("Category")])],
+                [_c("v-list-tile", [_vm._v("Category")])],
                 1
               )
             ],
@@ -98202,7 +98204,7 @@ var render = function() {
               [
                 _c(
                   "v-list-tile-content",
-                  [_c("v-list-title", [_vm._v(_vm._s(category.name))])],
+                  [_c("v-list-tile", [_vm._v(_vm._s(category.name))])],
                   1
                 )
               ],
@@ -100040,7 +100042,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -100051,7 +100053,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
 //
 //
 //
@@ -100146,13 +100147,12 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("v-select", {
+          _c("v-autocomplete", {
             attrs: {
               items: _vm.categories,
               "item-text": "name",
               "item-value": "id",
-              label: "Category",
-              autocomplete: ""
+              label: "Category"
             },
             model: {
               value: _vm.form.category_id,

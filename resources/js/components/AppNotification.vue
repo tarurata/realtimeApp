@@ -2,11 +2,11 @@
     <div class="text-xs-center">
         <v-menu offset-y>
             <v-btn icon slot="activator">
-                <v-icon color="red">add_alert</v-icon> 5
+                <v-icon :color="color">add_alert</v-icon> {{unreadCount}}
             </v-btn>
             <v-list>         
                 <v-list-tile v-for="item in unread" :key="item.id">
-                    <router-link :to="item.path">
+                    <router-link :to="`/${item.path}`">
                         <v-list-tile-title @click="readIt(item)">{{item.question}}</v-list-tile-title>
                     </router-link>
                 </v-list-tile>

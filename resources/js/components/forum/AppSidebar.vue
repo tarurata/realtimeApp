@@ -7,12 +7,12 @@
         <v-list>
             <v-list-tile >
                 <v-list-tile-content>
-                    <v-list-title>Category</v-list-title>
+                    <v-list-tile>Category</v-list-tile>
                 </v-list-tile-content>
             </v-list-tile>
             <v-list-tile v-for="category in categories" :key="category.id">
                 <v-list-tile-content>
-                    <v-list-title>{{category.name}}</v-list-title>
+                    <v-list-tile>{{category.name}}</v-list-tile>
                 </v-list-tile-content>
             </v-list-tile>
         </v-list>
