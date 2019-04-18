@@ -94192,7 +94192,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -94251,8 +94251,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.unreadCount = res.data.unread.length;
             });
         },
-        read: function read(notification) {
-            axios.post('/api/markAsReqd', { id: notification.id });
+        readIt: function readIt(notification) {
+            var _this2 = this;
+
+            axios.post('/api/markAsRead', { id: notification.id }).then(function (res) {
+                _this2.unread.splice(notification, 1);
+                _this2.read.push(notification);
+                _this2.unreadCount--;
+            });
+        }
+    },
+    computed: {
+        color: function color() {
+            return this.unreadCount > 0 ? 'red' : 'red lighten-4';
         }
     }
 });
@@ -94293,14 +94304,14 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { attrs: { to: item.data.path } },
+                      { attrs: { to: item.path } },
                       [
                         _c(
                           "v-list-tile-title",
                           {
                             on: {
                               click: function($event) {
-                                return _vm.read(item.data)
+                                return _vm.readIt(item)
                               }
                             }
                           },
