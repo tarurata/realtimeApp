@@ -4,6 +4,10 @@ use Illuminate\Http\Request;
 use App\Http\Resources\NotificationResource;
 class NotificationController extends Controller
 {
+    public function __construct(){
+        $this->middleware('JWT');
+    }
+    
     public function index()
     {
         return [
